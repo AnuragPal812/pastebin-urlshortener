@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require("express");
 const mongoose = require("mongoose");
 const { nanoid } = require("nanoid");
@@ -14,7 +16,7 @@ const BASE_URL = process.env.BASE_URL || "http://localhost:3000";
 var longURL;
 var error = "Server Error!! Please Try Again Later.";
 
-mongoose.connect("mongodb+srv://anuprag812:NQsGqcIsx3uT5bNk@pastebinshortener.kcp5t.mongodb.net/?retryWrites=true&w=majority&appName=PastebinShortener", {
+mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
@@ -30,7 +32,7 @@ db.once("open", () => {
 
   const PORT = process.env.PORT || 3000;
   app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+    console.log(`Server is running on ${BASE_URL}`);
   });
 });
 
