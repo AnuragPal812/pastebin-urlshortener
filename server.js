@@ -14,9 +14,9 @@ const BASE_URL = process.env.BASE_URL || "http://localhost:3000";
 var longURL;
 var error = "Server Error!! Please Try Again Later.";
 
-mongoose.connect("mongodb+srv://Nitesh:12345@cluster0.3n3ihxh.mongodb.net/", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
+mongoose.connect("mongodb+srv://anuprag812:NQsGqcIsx3uT5bNk@pastebinshortener.kcp5t.mongodb.net/?retryWrites=true&w=majority&appName=PastebinShortener", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
 });
 const db = mongoose.connection;
 
